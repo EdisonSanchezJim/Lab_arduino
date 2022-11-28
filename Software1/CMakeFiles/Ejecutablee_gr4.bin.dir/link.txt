@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Ejecutablee_gr4.bin.dir/SRC/config_tty.cpp.o CMakeFiles/Ejecutablee_gr4.bin.dir/SRC/funciones_gr4.cpp.o CMakeFiles/Ejecutablee_gr4.bin.dir/SRC/main.cpp.o CMakeFiles/Ejecutablee_gr4.bin.dir/SRC/participant.cpp.o -o bin/Ejecutablee_gr4.bin 

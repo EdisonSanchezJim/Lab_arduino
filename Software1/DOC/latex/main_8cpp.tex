@@ -1,0 +1,235 @@
+\hypertarget{main_8cpp}{}\section{src/main.cpp File Reference}
+\label{main_8cpp}\index{src/main.\+cpp@{src/main.\+cpp}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
+\item 
+void \hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_a961800bf60ff693820efbf7f4bc72788}{cont} =0
+\item 
+char \hyperlink{main_8cpp_aea2c2912af45e325a021392918aee677}{letra}
+\item 
+int \hyperlink{main_8cpp_adf916204820072417ed73a32de1cefcf}{flag} =0
+\item 
+int \hyperlink{main_8cpp_acbd15be00e8bf5ba1f83bac02d265750}{pulso} =0
+\item 
+int \hyperlink{main_8cpp_a9aa298457df2ada3959eb0eb2af69ac7}{entrada} =2
+\item 
+int \hyperlink{main_8cpp_a56ce1b6b9d0686602fbbb9989f6a68a3}{rojo} =3
+\item 
+int \hyperlink{main_8cpp_a0fbd78c4b6313b706f0739ab0ca35b5c}{verde} =4
+\item 
+int \hyperlink{main_8cpp_a7e2d8e605ae184d3d5573351bc503a77}{amarillo} =5
+\item 
+int \hyperlink{main_8cpp_a78fd647aef1b160049631857326e6be5}{cont\+Led} =6
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_afe461d27b9c48d5921c00d521181f12f}\label{main_8cpp_afe461d27b9c48d5921c00d521181f12f}} 
+\index{main.\+cpp@{main.\+cpp}!loop@{loop}}
+\index{loop@{loop}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file main.\+cpp.
+
+
+\begin{DoxyCode}
+44 \{
+45 
+46 \textcolor{keywordflow}{if}(Serial.available()>0) 
+47 \{  \textcolor{comment}{//Serial.available para ver si hay un dato}
+48    \hyperlink{main_8cpp_aea2c2912af45e325a021392918aee677}{letra}=Serial.read(); \textcolor{comment}{//a letra le asigna lo que entra del pulsador}
+49 
+50   \textcolor{keywordflow}{switch}(\hyperlink{main_8cpp_aea2c2912af45e325a021392918aee677}{letra})
+51   \{ \textcolor{comment}{//case para alumbrar los leds y asignar la bandera segun el caso}
+52     
+53     \textcolor{keywordflow}{case} \textcolor{charliteral}{'s'}: \textcolor{comment}{//start}
+54 
+55     digitalWrite(\hyperlink{main_8cpp_a7e2d8e605ae184d3d5573351bc503a77}{amarillo}, HIGH);
+56     digitalWrite(\hyperlink{main_8cpp_a0fbd78c4b6313b706f0739ab0ca35b5c}{verde},LOW);
+57     digitalWrite(\hyperlink{main_8cpp_a56ce1b6b9d0686602fbbb9989f6a68a3}{rojo},LOW);
+58     \hyperlink{main_8cpp_adf916204820072417ed73a32de1cefcf}{flag}=\textcolor{charliteral}{'s'};
+59     \textcolor{keywordflow}{break};
+60 
+61     \textcolor{keywordflow}{case} \textcolor{charliteral}{'r'}: \textcolor{comment}{//ready}
+62 
+63     digitalWrite(\hyperlink{main_8cpp_a7e2d8e605ae184d3d5573351bc503a77}{amarillo},LOW);
+64     digitalWrite(\hyperlink{main_8cpp_a0fbd78c4b6313b706f0739ab0ca35b5c}{verde},HIGH);
+65     digitalWrite(\hyperlink{main_8cpp_a56ce1b6b9d0686602fbbb9989f6a68a3}{rojo},LOW);
+66     \hyperlink{main_8cpp_adf916204820072417ed73a32de1cefcf}{flag}=\textcolor{charliteral}{'r'}; \textcolor{comment}{//Bandera para pasar al otro codigo}
+67     \textcolor{keywordflow}{break};
+68 
+69     \textcolor{keywordflow}{case} \textcolor{charliteral}{'S'}: \textcolor{comment}{//STOP}
+70 
+71     digitalWrite(\hyperlink{main_8cpp_a7e2d8e605ae184d3d5573351bc503a77}{amarillo},LOW);
+72     digitalWrite(\hyperlink{main_8cpp_a0fbd78c4b6313b706f0739ab0ca35b5c}{verde},LOW);
+73     digitalWrite(\hyperlink{main_8cpp_a56ce1b6b9d0686602fbbb9989f6a68a3}{rojo},HIGH);   
+74     \hyperlink{main_8cpp_adf916204820072417ed73a32de1cefcf}{flag}=\textcolor{charliteral}{'S'};
+75     \hyperlink{main_8cpp_a9aa298457df2ada3959eb0eb2af69ac7}{entrada}=0; 
+76     Serial.write(\hyperlink{main_8cpp_a961800bf60ff693820efbf7f4bc72788}{cont}); \textcolor{comment}{//Envia el valor de los pulsos contados       }
+77     \textcolor{keywordflow}{break};
+78    \}
+79 \}
+80 
+81 \textcolor{comment}{// este else entra si la bandera esta en r para contar}
+82 \textcolor{keywordflow}{else}
+83 \{ 
+84 
+85   \textcolor{keywordflow}{if}(\hyperlink{main_8cpp_adf916204820072417ed73a32de1cefcf}{flag}==\textcolor{charliteral}{'r'})
+86   \{
+87     \hyperlink{main_8cpp_acbd15be00e8bf5ba1f83bac02d265750}{pulso}=digitalRead(\hyperlink{main_8cpp_a9aa298457df2ada3959eb0eb2af69ac7}{entrada});
+88 
+89     \textcolor{keywordflow}{if}(\hyperlink{main_8cpp_acbd15be00e8bf5ba1f83bac02d265750}{pulso}==1)
+90     \{
+91       \hyperlink{main_8cpp_a961800bf60ff693820efbf7f4bc72788}{cont}++;
+92     \}
+93 
+94     \textcolor{comment}{//este es antirrebote de internet}
+95     \textcolor{keywordflow}{while}(digitalRead(\hyperlink{main_8cpp_a9aa298457df2ada3959eb0eb2af69ac7}{entrada})==1)
+96     \{
+97       digitalWrite(\hyperlink{main_8cpp_a78fd647aef1b160049631857326e6be5}{contLed},HIGH); \textcolor{comment}{//para led contLed}
+98     \}
+99     \textcolor{keywordflow}{while}(digitalRead(\hyperlink{main_8cpp_a9aa298457df2ada3959eb0eb2af69ac7}{entrada})==0)
+100     \{
+101       digitalWrite(\hyperlink{main_8cpp_a78fd647aef1b160049631857326e6be5}{contLed},LOW); \textcolor{comment}{//para led contLed}
+102     \}
+103   \}
+104 \}
+105 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
+\index{main.\+cpp@{main.\+cpp}!setup@{setup}}
+\index{setup@{setup}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file main.\+cpp.
+
+
+\begin{DoxyCode}
+21 \{
+22   
+23   \textcolor{comment}{//Velocidad}
+24     Serial.begin(9600);
+25   \textcolor{comment}{//ENTRADA CONTADOR}
+26   pinMode(\hyperlink{main_8cpp_a9aa298457df2ada3959eb0eb2af69ac7}{entrada},INPUT);
+27 
+28   \textcolor{comment}{//LED CONTADOR}
+29   pinMode(\hyperlink{main_8cpp_a78fd647aef1b160049631857326e6be5}{contLed},OUTPUT);
+30 
+31   \textcolor{comment}{// PIN ROJO}
+32   pinMode(\hyperlink{main_8cpp_a56ce1b6b9d0686602fbbb9989f6a68a3}{rojo},OUTPUT);
+33 
+34   \textcolor{comment}{//PIN VERDE}
+35   pinMode(\hyperlink{main_8cpp_a0fbd78c4b6313b706f0739ab0ca35b5c}{verde},OUTPUT);
+36 
+37   \textcolor{comment}{//PIN AMARILLO}
+38   pinMode(\hyperlink{main_8cpp_a7e2d8e605ae184d3d5573351bc503a77}{amarillo},OUTPUT);
+39 
+40 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a7e2d8e605ae184d3d5573351bc503a77}\label{main_8cpp_a7e2d8e605ae184d3d5573351bc503a77}} 
+\index{main.\+cpp@{main.\+cpp}!amarillo@{amarillo}}
+\index{amarillo@{amarillo}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{amarillo}{amarillo}}
+{\footnotesize\ttfamily int amarillo =5}
+
+
+
+Definition at line 14 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a961800bf60ff693820efbf7f4bc72788}\label{main_8cpp_a961800bf60ff693820efbf7f4bc72788}} 
+\index{main.\+cpp@{main.\+cpp}!cont@{cont}}
+\index{cont@{cont}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{cont}{cont}}
+{\footnotesize\ttfamily int cont =0}
+
+
+
+Definition at line 5 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a78fd647aef1b160049631857326e6be5}\label{main_8cpp_a78fd647aef1b160049631857326e6be5}} 
+\index{main.\+cpp@{main.\+cpp}!cont\+Led@{cont\+Led}}
+\index{cont\+Led@{cont\+Led}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{cont\+Led}{contLed}}
+{\footnotesize\ttfamily int cont\+Led =6}
+
+
+
+Definition at line 16 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a9aa298457df2ada3959eb0eb2af69ac7}\label{main_8cpp_a9aa298457df2ada3959eb0eb2af69ac7}} 
+\index{main.\+cpp@{main.\+cpp}!entrada@{entrada}}
+\index{entrada@{entrada}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{entrada}{entrada}}
+{\footnotesize\ttfamily int entrada =2}
+
+
+
+Definition at line 11 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_adf916204820072417ed73a32de1cefcf}\label{main_8cpp_adf916204820072417ed73a32de1cefcf}} 
+\index{main.\+cpp@{main.\+cpp}!flag@{flag}}
+\index{flag@{flag}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{flag}{flag}}
+{\footnotesize\ttfamily int flag =0}
+
+
+
+Definition at line 7 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_aea2c2912af45e325a021392918aee677}\label{main_8cpp_aea2c2912af45e325a021392918aee677}} 
+\index{main.\+cpp@{main.\+cpp}!letra@{letra}}
+\index{letra@{letra}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{letra}{letra}}
+{\footnotesize\ttfamily char letra}
+
+
+
+Definition at line 6 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_acbd15be00e8bf5ba1f83bac02d265750}\label{main_8cpp_acbd15be00e8bf5ba1f83bac02d265750}} 
+\index{main.\+cpp@{main.\+cpp}!pulso@{pulso}}
+\index{pulso@{pulso}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{pulso}{pulso}}
+{\footnotesize\ttfamily int pulso =0}
+
+
+
+Definition at line 8 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a56ce1b6b9d0686602fbbb9989f6a68a3}\label{main_8cpp_a56ce1b6b9d0686602fbbb9989f6a68a3}} 
+\index{main.\+cpp@{main.\+cpp}!rojo@{rojo}}
+\index{rojo@{rojo}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{rojo}{rojo}}
+{\footnotesize\ttfamily int rojo =3}
+
+
+
+Definition at line 12 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a0fbd78c4b6313b706f0739ab0ca35b5c}\label{main_8cpp_a0fbd78c4b6313b706f0739ab0ca35b5c}} 
+\index{main.\+cpp@{main.\+cpp}!verde@{verde}}
+\index{verde@{verde}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{verde}{verde}}
+{\footnotesize\ttfamily int verde =4}
+
+
+
+Definition at line 13 of file main.\+cpp.
+

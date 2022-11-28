@@ -1,0 +1,25 @@
+\contentsline {chapter}{\numberline {1}File Index}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}File List}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}File Documentation}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}src/main.cpp File Reference}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Function Documentation}{3}{subsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.1}loop()}{4}{subsubsection.2.1.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.2}setup()}{4}{subsubsection.2.1.1.2}
+\contentsline {subsection}{\numberline {2.1.2}Variable Documentation}{5}{subsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.2.1}amarillo}{5}{subsubsection.2.1.2.1}
+\contentsline {subsubsection}{\numberline {2.1.2.2}cont}{5}{subsubsection.2.1.2.2}
+\contentsline {subsubsection}{\numberline {2.1.2.3}cont\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Led}{5}{subsubsection.2.1.2.3}
+\contentsline {subsubsection}{\numberline {2.1.2.4}entrada}{5}{subsubsection.2.1.2.4}
+\contentsline {subsubsection}{\numberline {2.1.2.5}flag}{6}{subsubsection.2.1.2.5}
+\contentsline {subsubsection}{\numberline {2.1.2.6}letra}{6}{subsubsection.2.1.2.6}
+\contentsline {subsubsection}{\numberline {2.1.2.7}pulso}{6}{subsubsection.2.1.2.7}
+\contentsline {subsubsection}{\numberline {2.1.2.8}rojo}{6}{subsubsection.2.1.2.8}
+\contentsline {subsubsection}{\numberline {2.1.2.9}verde}{6}{subsubsection.2.1.2.9}
+\contentsline {section}{\numberline {2.2}test/arduinoprueba.cpp File Reference}{6}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Macro Definition Documentation}{7}{subsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.1.1}B\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}U\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}TE}{7}{subsubsection.2.2.1.1}
+\contentsline {subsection}{\numberline {2.2.2}Function Documentation}{7}{subsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2.1}config\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}tty()}{7}{subsubsection.2.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2.2}main()}{9}{subsubsection.2.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Variable Documentation}{10}{subsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.3.1}S\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}E\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}L\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}P\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}O\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}RT}{10}{subsubsection.2.2.3.1}

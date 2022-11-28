@@ -1,0 +1,3 @@
+/home/alse/Software1/CMakeFiles/Ejecutablee_gr4.bin.dir
+/home/alse/Software1/CMakeFiles/edit_cache.dir
+/home/alse/Software1/CMakeFiles/rebuild_cache.dir
