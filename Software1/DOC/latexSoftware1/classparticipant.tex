@@ -1,0 +1,153 @@
+\hypertarget{classparticipant}{}\section{participant Class Reference}
+\label{classparticipant}\index{participant@{participant}}
+
+
+{\ttfamily \#include $<$lib\+\_\+grupo4.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classparticipant_aed68ba6ec61d7b46f777f4853d645dd9}{participant} ()
+\item 
+\hyperlink{classparticipant_aa051b5d45d53d1ab5ac417006c90c76e}{participant} (unsigned int id, string nombre, unsigned int tp)
+\item 
+void \hyperlink{classparticipant_ac6d9797d61b16b3ccc2edf65ed73ff65}{set\+\_\+participant} (unsigned int id, string name)
+\item 
+void \hyperlink{classparticipant_a8633b78a8492889f04cf05d3b892939f}{set\+\_\+pushed} (unsigned int tp)
+\item 
+unsigned int \hyperlink{classparticipant_aa43dcd507d0497ed4609298da5a5d70f}{get\+\_\+participant\+\_\+id} ()
+\item 
+string \hyperlink{classparticipant_ab48b986f5c085ffff4bf71d2cd3778e9}{get\+\_\+name} ()
+\item 
+unsigned int \hyperlink{classparticipant_ab72b1560eaa178c674bf13bbb6e17206}{get\+\_\+pushed} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 16 of file lib\+\_\+grupo4.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classparticipant_aed68ba6ec61d7b46f777f4853d645dd9}\label{classparticipant_aed68ba6ec61d7b46f777f4853d645dd9}} 
+\index{participant@{participant}!participant@{participant}}
+\index{participant@{participant}!participant@{participant}}
+\subsubsection{\texorpdfstring{participant()}{participant()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily participant\+::participant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 24 of file lib\+\_\+grupo4.\+h.
+
+
+\begin{DoxyCode}
+24                      : participant\_id(0), name(), times\_pushed(0)
+25         \{
+26         \}   
+\end{DoxyCode}
+\mbox{\Hypertarget{classparticipant_aa051b5d45d53d1ab5ac417006c90c76e}\label{classparticipant_aa051b5d45d53d1ab5ac417006c90c76e}} 
+\index{participant@{participant}!participant@{participant}}
+\index{participant@{participant}!participant@{participant}}
+\subsubsection{\texorpdfstring{participant()}{participant()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily participant\+::participant (\begin{DoxyParamCaption}\item[{unsigned int}]{id,  }\item[{string}]{nombre,  }\item[{unsigned int}]{tp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 28 of file lib\+\_\+grupo4.\+h.
+
+
+\begin{DoxyCode}
+28 : participant\_id(\textcolor{keywordtype}{id}), name(nombre), times\_pushed(tp)\{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classparticipant_ab48b986f5c085ffff4bf71d2cd3778e9}\label{classparticipant_ab48b986f5c085ffff4bf71d2cd3778e9}} 
+\index{participant@{participant}!get\+\_\+name@{get\+\_\+name}}
+\index{get\+\_\+name@{get\+\_\+name}!participant@{participant}}
+\subsubsection{\texorpdfstring{get\+\_\+name()}{get\_name()}}
+{\footnotesize\ttfamily string participant\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 18 of file funciones\+\_\+gr4.\+cpp.
+
+
+\begin{DoxyCode}
+18                               \{
+19     \textcolor{keywordflow}{return} name;
+20 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classparticipant_aa43dcd507d0497ed4609298da5a5d70f}\label{classparticipant_aa43dcd507d0497ed4609298da5a5d70f}} 
+\index{participant@{participant}!get\+\_\+participant\+\_\+id@{get\+\_\+participant\+\_\+id}}
+\index{get\+\_\+participant\+\_\+id@{get\+\_\+participant\+\_\+id}!participant@{participant}}
+\subsubsection{\texorpdfstring{get\+\_\+participant\+\_\+id()}{get\_participant\_id()}}
+{\footnotesize\ttfamily unsigned int participant\+::get\+\_\+participant\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file funciones\+\_\+gr4.\+cpp.
+
+
+\begin{DoxyCode}
+14                                               \{
+15     \textcolor{keywordflow}{return} participant\_id;
+16 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classparticipant_ab72b1560eaa178c674bf13bbb6e17206}\label{classparticipant_ab72b1560eaa178c674bf13bbb6e17206}} 
+\index{participant@{participant}!get\+\_\+pushed@{get\+\_\+pushed}}
+\index{get\+\_\+pushed@{get\+\_\+pushed}!participant@{participant}}
+\subsubsection{\texorpdfstring{get\+\_\+pushed()}{get\_pushed()}}
+{\footnotesize\ttfamily unsigned int participant\+::get\+\_\+pushed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file funciones\+\_\+gr4.\+cpp.
+
+
+\begin{DoxyCode}
+22                                       \{
+23     \textcolor{keywordflow}{return} times\_pushed;
+24 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classparticipant_ac6d9797d61b16b3ccc2edf65ed73ff65}\label{classparticipant_ac6d9797d61b16b3ccc2edf65ed73ff65}} 
+\index{participant@{participant}!set\+\_\+participant@{set\+\_\+participant}}
+\index{set\+\_\+participant@{set\+\_\+participant}!participant@{participant}}
+\subsubsection{\texorpdfstring{set\+\_\+participant()}{set\_participant()}}
+{\footnotesize\ttfamily void participant\+::set\+\_\+participant (\begin{DoxyParamCaption}\item[{unsigned int}]{id,  }\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file funciones\+\_\+gr4.\+cpp.
+
+
+\begin{DoxyCode}
+5                                                                  \{
+6     participant\_id = id;
+7     name=nombre;
+8 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classparticipant_a8633b78a8492889f04cf05d3b892939f}\label{classparticipant_a8633b78a8492889f04cf05d3b892939f}} 
+\index{participant@{participant}!set\+\_\+pushed@{set\+\_\+pushed}}
+\index{set\+\_\+pushed@{set\+\_\+pushed}!participant@{participant}}
+\subsubsection{\texorpdfstring{set\+\_\+pushed()}{set\_pushed()}}
+{\footnotesize\ttfamily void participant\+::set\+\_\+pushed (\begin{DoxyParamCaption}\item[{unsigned int}]{tp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 10 of file funciones\+\_\+gr4.\+cpp.
+
+
+\begin{DoxyCode}
+10                                               \{
+11     times\_pushed = tp;
+12 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+I\+N\+C\+L\+U\+D\+E/\hyperlink{lib__grupo4_8h}{lib\+\_\+grupo4.\+h}\item 
+S\+R\+C/\hyperlink{funciones__gr4_8cpp}{funciones\+\_\+gr4.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,46 @@
+\hypertarget{funciones__gr4_8cpp}{}\section{S\+R\+C/funciones\+\_\+gr4.cpp File Reference}
+\label{funciones__gr4_8cpp}\index{S\+R\+C/funciones\+\_\+gr4.\+cpp@{S\+R\+C/funciones\+\_\+gr4.\+cpp}}
+{\ttfamily \#include \char`\"{}library.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lib\+\_\+grupo4.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{funciones__gr4_8cpp_ab0cd6bcf9ca36f9400d875b33ddc0160}{actividad\+\_\+arduino} (float tiempo\+\_\+preparacion, float ventana\+\_\+tiempo\+\_\+lectura)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{funciones__gr4_8cpp_ab0cd6bcf9ca36f9400d875b33ddc0160}\label{funciones__gr4_8cpp_ab0cd6bcf9ca36f9400d875b33ddc0160}} 
+\index{funciones\+\_\+gr4.\+cpp@{funciones\+\_\+gr4.\+cpp}!actividad\+\_\+arduino@{actividad\+\_\+arduino}}
+\index{actividad\+\_\+arduino@{actividad\+\_\+arduino}!funciones\+\_\+gr4.\+cpp@{funciones\+\_\+gr4.\+cpp}}
+\subsubsection{\texorpdfstring{actividad\+\_\+arduino()}{actividad\_arduino()}}
+{\footnotesize\ttfamily int actividad\+\_\+arduino (\begin{DoxyParamCaption}\item[{float}]{tiempo\+\_\+preparacion,  }\item[{float}]{ventana\+\_\+tiempo\+\_\+lectura }\end{DoxyParamCaption})}
+
+
+
+Definition at line 32 of file funciones\+\_\+gr4.\+cpp.
+
+
+\begin{DoxyCode}
+33 \{
+34     \textcolor{keywordtype}{int} tp;
+35         \textcolor{keywordtype}{int} read\_buf;
+36     \textcolor{keyword}{struct }termios tty;
+37     \textcolor{keywordtype}{int} serial\_port;
+38         \hyperlink{library_8h_af4b26b32c3c509fa307419652482c659}{config\_tty} (\textcolor{stringliteral}{"/dev/ttyS0"}, &tty, B9600, &serial\_port); 
+39         sleep(tiempo\_preparacion);
+40     write(serial\_port, \textcolor{stringliteral}{"s"}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));
+41         sleep(tiempo\_preparacion);
+42         write(serial\_port, \textcolor{stringliteral}{"r"}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));
+43         sleep(ventana\_tiempo\_lectura);
+44         write(serial\_port, \textcolor{stringliteral}{"S"}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));
+45     tp = read(serial\_port, &read\_buf, \textcolor{keyword}{sizeof}(read\_buf)); 
+46         sleep(tiempo\_preparacion);
+47     printf(\textcolor{stringliteral}{"---------------------------------- \(\backslash\)n\(\backslash\)n"});
+48 
+49     close(serial\_port);
+50 
+51     \textcolor{comment}{//retorna las veces oprimidas}
+52     \textcolor{keywordflow}{return} read\_buf; \textcolor{comment}{//tp}
+53 \}
+\end{DoxyCode}

@@ -1,0 +1,74 @@
+\hypertarget{main_8cpp}{}\section{S\+R\+C/main.cpp File Reference}
+\label{main_8cpp}\index{S\+R\+C/main.\+cpp@{S\+R\+C/main.\+cpp}}
+{\ttfamily \#include \char`\"{}library.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lib\+\_\+grupo4.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 10 of file main.\+cpp.
+
+
+\begin{DoxyCode}
+11 \{
+12     \textcolor{comment}{//declaracion de variables}
+13     \textcolor{keywordtype}{int} cantidad, tp;
+14     \textcolor{keywordtype}{string} nombre;
+15     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} id;
+16         \textcolor{keywordtype}{int} read\_buf;
+17     \textcolor{keywordtype}{float} tiempo\_prep, ventanalec;
+18 
+19     \textcolor{comment}{//comprobación de argumentos}
+20     \textcolor{keywordflow}{if}( argc =!3)
+21         \{
+22                 printf(\textcolor{stringliteral}{"\(\backslash\)nError de cantidad de argumentos"});
+23         exit(1);        
+24     \}
+25     
+26     \textcolor{comment}{//asignacion de tiempo de prep}
+27     tiempo\_prep = atof(argv[1]);
+28     ventanalec = atof(argv[2]); 
+29     
+30     \textcolor{comment}{//solicitud de numero de participantes}
+31     cout<<\textcolor{stringliteral}{"Ingrese la cantidad de participantes: "};
+32     cin>> cantidad; 
+33     cout<<endl;
+34     \hyperlink{classparticipant}{participant} participantes[cantidad];
+35 
+36     \textcolor{comment}{//pedir datos de participantes}
+37     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<cantidad; i++)\{
+38         \hyperlink{lib__grupo4_8h_a9a000c5fe01fba943fecf4c38e8c9ce4}{participantes\_info}(&\textcolor{keywordtype}{id}, &nombre, i);
+39         participantes[i].\hyperlink{classparticipant_ac6d9797d61b16b3ccc2edf65ed73ff65}{set\_participant}(\textcolor{keywordtype}{id}, nombre);
+40         read\_buf= \hyperlink{lib__grupo4_8h_ab0cd6bcf9ca36f9400d875b33ddc0160}{actividad\_arduino}(tiempo\_prep, ventanalec);
+41         participantes[i].\hyperlink{classparticipant_a8633b78a8492889f04cf05d3b892939f}{set\_pushed}((\textcolor{keywordtype}{char})read\_buf);
+42         
+43     \};
+44 
+45         \textcolor{comment}{//imprimir resultados}
+46     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<cantidad; i++)\{
+47         cout<<\textcolor{stringliteral}{"los resultados fueron:"};
+48         cout<<\textcolor{stringliteral}{"Participante #"}<<i+1<<endl;
+49         cout<<\textcolor{stringliteral}{"nombre: "}<<participantes[i].\hyperlink{classparticipant_ab48b986f5c085ffff4bf71d2cd3778e9}{get\_name}()<<endl;
+50         cout<<\textcolor{stringliteral}{"con id: "}<<participantes[i].\hyperlink{classparticipant_aa43dcd507d0497ed4609298da5a5d70f}{get\_participant\_id}()<<endl;
+51         cout<<\textcolor{stringliteral}{"veces oprimidas: "}<<participantes[i].\hyperlink{classparticipant_ab72b1560eaa178c674bf13bbb6e17206}{get\_pushed}()<<endl;
+52         cout<<endl;
+53     \};
+54 
+55 
+56 
+57 
+58     \textcolor{keywordflow}{return} 0;       
+59 \};
+\end{DoxyCode}
